@@ -20,5 +20,5 @@ def daily_adjusted_ohlc(symbol):
     })
     df.index = pd.to_datetime(df.index)
     df[df.columns] = df[df.columns].astype("float64")
-    df['Symbol'] = symbol
+    df['symbol'] = symbol
     return df

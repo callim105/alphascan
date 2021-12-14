@@ -4,8 +4,9 @@ import numpy as np
 from stock.lib.daily import daily_adjusted_ohlc
 from stock.lib.intraday import intraday_ohlc
 from stock.lib.technicals.indicators import sma
-from crypto.lib.market import get_all_coins, get_coin_info
-from crypto.util.binance_util import BinanceClient
+from stock.lib.fundamentals.company_info import * 
+from stock.lib.fundamentals.earnings import *
+
 
 def main():
     # js = intraday_ohlc(symbol="NVDA", interval="1min")
@@ -14,9 +15,13 @@ def main():
     # df = js.join(s, how="inner", lsuffix='x')
     # df.drop(inplace=True, columns=["Symbolx"])
     # print(js)
-    client = BinanceClient()
-    df = get_all_coins(client)
-    sol = get_coin_info(client, coin='SOLUSD')
+    # client = BinanceClient()
+    # df = get_all_coins(client)
+    # sol = get_coin_info(client, coin='SOLUSD')
+    # print(df)
+    # df = get_annual_income_statements('NVDA')
+    # earn = get_quarterly_earnings("NVDA")
+    info = company_info("NVDA")
     print(df)
 
 

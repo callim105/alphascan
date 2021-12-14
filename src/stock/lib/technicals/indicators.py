@@ -19,5 +19,5 @@ def sma(symbol, interval, time_period, series_type):
     df.index = pd.to_datetime(df.index)
     df["SMA"] = df["SMA"].astype("float64")
     df = df.rename(columns={"SMA": f"SMA{time_period}"})
-    df['Symbol'] = symbol
+    df['symbol'] = symbol
     return df

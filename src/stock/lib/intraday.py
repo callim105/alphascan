@@ -24,5 +24,5 @@ def intraday_ohlc(symbol, interval):
             '5. volume': 'volume'
     })
     df.index = pd.to_datetime(df.index)
-    df['Symbol'] = symbol
+    df['symbol'] = symbol
     return df
